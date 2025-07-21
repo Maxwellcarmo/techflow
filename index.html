@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechFlow</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="logo.jpg" type="image/png" />
+</head>
+<body>
+  <header class="header">
+    <div class="container logo">
+  <img src="images\logo.jpg" alt="Logo" class="logo-img" />
+  <div class="logo-text">
+    <h1>Universidade TechFlow</h1>
+    <p class="subtitle">Transformando vidas pelo conhecimento</p>
+    <p class="address">Av. Central, 123 - Uberlândia/MG</p>
+  </div>
+</div>
+
+  </header>
+
+  <main class="main-content">
+    <section class="main-menu container">
+      <h2 class="section-title">Acesso Rápido</h2>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'horarios-sub')">
+        <i class="fas fa-clock"></i> Horários e Calendário<span class="chevron">▶</span>
+      </button>
+      <div id="horarios-sub" class="sub-options">
+        <a href="C:/Users/Maxwell/Desktop/Sistema%20Acad%C3%AAmico%20Flow/Home/HorarioAula/horarioaulaold.html">Horário das Aulas</a>
+        <a href="C:/Users/Maxwell/Desktop/Sistema%20Acadêmico%20Flow/Home/calendarioacademico/calendarioacademico.html">Calendário Acadêmico</a>
+        <a href="https://drive.google.com/file/d/1mWlP5pjq13CYxCEbE9db7ZIvp3PyKMOC/view">Calendário Acadêmico - Download</a>
+        <a href="horario-coordenadores.html">Atendimento dos Coordenadores</a>
+        <a href="horario-setores.html">Funcionamento dos Setores</a>
+        <a href="https://www.uberlandia.mg.gov.br/prefeitura/secretarias/transito-e-transportes/udibus/">Horários dos Ônibus</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'portais-sub')">
+        <i class="fas fa-graduation-cap fa-fw unchecked-icon"></i> Portais do Aluno <span class="chevron">▶</span>
+      </button>
+      <div id="portais-sub" class="sub-options">
+        <a href="https://login.kroton.com.br/">Portal do Aluno</a>
+        <a href="tel:+30034030">CRA - Central de Relacionamento do Aluno</a>
+        <a href="https://www.anhanguera.com/guiadoaluno">Guia do Aluno</a>
+        <a href="https://www.youtube.com/watch?v=IvDySAVeRtI">Aula Inaugural</a>
+        <a href="https://www.santanderopenacademy.com/pt_br/index.html">Santander Academy</a>
+        <a href="https://www.amigovalepremio.com.br/pitagoras">Amigo Vale Prêmio</a>
+        <a href="https://escolhaoutrocurso.vestibulares.com.br/">Reopção Calouro</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'financeiro-sub')">
+        <i class="fa-solid fa-ticket"></i> Financeiro <span class="chevron">▶</span>
+      </button>
+      <div id="financeiro-sub" class="sub-options">
+        <a href="https://wa.me/11913481040">Central de Atendimento - WhatsApp</a>
+        <a href="https://wa.me/3432921922">Negociação Intervalor 01 - WhatsApp</a>
+        <a href="https://wa.me/3432921978">Negociação Intervalor 02 - WhatsApp</a>
+        <a href="tel:+30034030">CRA - Central de Relacionamento do Aluno</a>
+        <a href="https://acessounico.mec.gov.br/">FIES</a>
+        <a href="https://prouni.mec.gov.br/index.html">PROUNI</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'vagas-sub')">
+        <i class="fas fa-briefcase"></i> Vagas <span class="chevron">▶</span>
+      </button>
+      <div id="vagas-sub" class="sub-options">
+        <a href="file:///C:/Users/Maxwell/Desktop/Sistema%20Acad%C3%AAmico%20Flow/Home/vagasinternas/vagasinternas.html">Divulgação Interna</a>
+        <a href="https://emprega.ai/home">Emprega.ai</a>
+        <a href="https://portal.ciee.org.br/">CIEE Estágios</a>
+        <a href="https://proeestagios.com.br/">Proe Estágios</a>
+        <a href="https://app.uberhub.com.br/vagas/">UberHub Vagas</a>
+        <a href="https://www.gupy.io/">Gupy</a>
+        <a href="https://www.vagas.com.br/">Vagas.com</a>
+        <a href="https://eb.vagas.com.br/kroton">Vagas Kroton</a>
+        <a href="https://www.catho.com.br/">Catho.com</a>
+        <a href="https://www.glassdoor.com.br/index.htm">Glassdoor</a>
+        <a href="https://br.indeed.com/">indeed</a>
+        <a href="https://www.linkedin.com/feed/">Linkedin</a>
+        <a href="https://www.infojobs.com.br/">Infojobs</a>
+        <a href="https://www.nerdin.com.br/">Nerdin</a>
+        <a href="https://ats.abler.com.br/jobs/shrecrutamento">SerHumano Recrutamento</a>
+        <a href="https://www.trabalhabrasil.com.br/vagas-de-emprego-em-uberlandia-mg">Trabalha Brasil</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'jornada-sub')">
+        <i class="fas fa-thumbtack"></i> Jornada Acadêmica <span class="chevron">▶</span>
+      </button>
+      <div id="jornada-sub" class="sub-options">
+        <a href="">Entendendo o Portal do Aluno</a>
+        <a href="">Entendendo as Notas</a>
+        <a href="">Quais são Tipos de Prova</a>
+        <a href="">Biblioteca</a>
+        <a href="">Rematrícula</a>
+        <a href="">Ajuste de Grade</a>
+        <a href="">Horas Complementares</a>
+        <a href="">Entendendo o AVA</a>
+        <a href="">Monitoria</a>
+        <a href="">Estágio</a>
+        <a href="">TCC</a>
+        <a href="">Conclusão de Curso</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'biblioteca-sub')">
+        <i class="fas fa-book"></i> Biblioteca <span class="chevron">▶</span>
+      </button>
+      <div id="biblioteca-sub" class="sub-options">
+        <a href="https://biblioteca-virtual.com/anhanguera">Biblioteca Virtual</a>
+        <a href="https://catalogoonline.kroton.com.br/">Biblioteca Física</a>
+      </div>
+
+      <button class="menu-button" onclick="toggleSubOptions(this, 'redessociais-sub')">
+        <i class="fas fa-thumbs-up"></i> Redes Sociais <span class="chevron">▶</span>
+      </button>
+      <div id="redessociais-sub" class="sub-options">
+        <a href="https://www.instagram.com/anhangueraudi/">Instagram Anhanguera Uberlândia</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleSubOptions(button, id) {
+      const el = document.getElementById(id);
+      const isVisible = el.classList.contains("show");
+      document.querySelectorAll('.sub-options').forEach(div => div.classList.remove("show"));
+      document.querySelectorAll('.menu-button').forEach(btn => btn.classList.remove("active"));
+      if (!isVisible) {
+        el.classList.add("show");
+        button.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>

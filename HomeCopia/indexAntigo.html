@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Acadêmico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo.jpg" type="image/png"> </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo" class="logo-img"> <h1>Universidade Flow</h1>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <nav class="side-menu">
+        <button class="close-menu" aria-label="Fechar Menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li class="has-submenu">
+                <a href="#" class="menu-item submenu-toggle"><i class="fas fa-clock"></i>Horários<i class="fas fa-chevron-down submenu-icon"></i></a>
+                <ul class="submenu">
+                    <li><a href="#" class="menu-item" data-page="estagios"><i class="fas fa-file-alt"></i> Documentos de Estágio2</a></li>
+                    <li><a href="#" class="menu-item" data-page="tccs"><i class="fas fa-graduation-cap"></i> Bancas de TCC2</a></li>
+                    <li><a href="#" class="menu-item" data-page="pesquisas"><i class="fas fa-flask"></i> Projetos de Pesquisa2</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#" class="menu-item submenu-toggle"><i class="fas fa-folder"></i> Documentos <i class="fas fa-chevron-down submenu-icon"></i></a>
+                <ul class="submenu">
+                    <li><a href="#" class="menu-item" data-page="estagio"><i class="fas fa-file-alt"></i> Documentos de Estágio</a></li>
+                    <li><a href="#" class="menu-item" data-page="tcc"><i class="fas fa-graduation-cap"></i> Bancas de TCC</a></li>
+                    <li><a href="#" class="menu-item" data-page="pesquisa"><i class="fas fa-flask"></i> Projetos de Pesquisa</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="menu-item" data-page="calendario"><i class="fas fa-calendar-alt"></i> Calendário Acadêmico</a></li>
+            <li class="separator"></li>
+            <li><a href="#" class="menu-item" data-page="perfil"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+            <li><a href="#" class="menu-item" data-page="avisos"><i class="fas fa-bullhorn"></i> Avisos Importantes</a></li>
+            <li><a href="#" class="menu-item" data-page="contato"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="feed-section container">
+            <h3>Novidades e Oportunidades</h3>
+            <div class="search-bar-container">
+                <input type="text" id="search-input" placeholder="Buscar vagas e novidades...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="post-grid">
+                <article class="post-card">
+                    <img src="logo.jpg" alt="Imagem de Vaga de Estágio">
+                    <div class="post-content">
+                        <h4>Vaga de Estágio: Desenvolvedor Front-end</h4>
+                        <p>Empresa XYZ busca estagiários de tecnologia. Conhecimento em React e CSS é um diferencial.Empresa XYZ busca estagiários de tecnologia. Conhecimento em React e CSS é um diferencial.Empresa XYZ busca estagiários de tecnologia. Conhecimento em React e CSS é um diferencial.</p>
+                        <span class="post-meta"><i class="fas fa-briefcase"></i> Vaga | 05/07/2025</span>
+                        <a href="#" class="read-more">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="logo.jpg" alt="Imagem de Evento">
+                    <div class="post-content">
+                        <h4>Feira de Profissões 2025</h4>
+                        <p>Prepare-se para o maior evento de carreiras da faculdade. Dia 20/07 no auditório principal.</p>
+                        <span class="post-meta"><i class="fas fa-bullhorn"></i> Evento | 03/07/2025</span>
+                        <a href="#" class="read-more">Saiba Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <img src="logo.jpg" alt="Imagem de Aviso">
+                    <div class="post-content">
+                        <h4>Período de Matrículas e Rematrículas</h4>
+                        <p>Atenção aos prazos! O período de matrículas para o próximo semestre está aberto.</p>
+                        <span class="post-meta"><i class="fas fa-info-circle"></i> Aviso | 01/07/2025</span>
+                        <a href="#" class="read-more">Confira o Calendário <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                </div>
+            <div class="load-more-container">
+                <button class="load-more-button">Carregar Mais Notícias</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="post-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-button">&times;</span>
+            <img id="modal-image" src="" alt="Imagem do Post">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <span id="modal-meta" class="post-meta"></span>
+            </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

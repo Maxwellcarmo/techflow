@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário de Aula</title>
+    <link rel="stylesheet" href="styleold.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="Favicon.png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="LogoFaculdade.jpg" alt="Logo da Faculdade" class="logo">
+            <div>
+                <h1>Horário de Aula</h1>
+                <p>Centro Universitário Flow</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Busque aqui seus horários.</h2>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar disciplina, professor ou dia..." autocomplete="off">
+            </div>
+            <div class="filters">
+                <select id="courseFilter" class="filter-select">
+                    <option value="">Todos os Cursos</option>
+                    <option value="67790">Administração - N</option>
+                    <option value="12345">Agronomia - N</option>
+                    <option value="2576">Arquitetura e Urbanismo - M</option>
+                    <option value="2575">Arquitetura e Urbanismo - N</option>
+                    <option value="">Biomedicina - M</option>
+                    <option value="">Biomedicina - N</option>
+                    <option value="88938">Ciência da Computação - N</option>
+                    <option value="">Ciências Contábeis - N</option>
+                    <option value="">Direito - M</option>
+                    <option value="">Direito - N</option>
+                    <option value="">Educação Física (Bacharelado) - N</option>
+                    <option value="">Educação Física (Licenciatura) - N</option>
+                    <option value="">Enfermagem - M</option>
+                    <option value="">Enfermagem - N</option>
+                    <option value="">Farmácia - M</option>
+                    <option value="">Farmácia - N</option>
+                    <option value="">Fisioterapia - M</option>
+                    <option value="">Fisioterapia - N</option>
+                    <option value="">Engenharia Ambiental - N</option>
+                    <option value="68004">Engenharia Civil - N</option>
+                    <option value="3848">Engenharia da Computação - N</option>
+                    <option value="">Engenharia de Produção - N</option>
+                    <option value="67358">Engenharia Elétrica - N</option>
+                    <option value="68120">Engenharia Mecânica - N</option>
+                    <option value="">Medicina Veterinária - M</option>
+                    <option value="">Medicina Veterinária - N</option>
+                    <option value="">Nutrição - M</option>
+                    <option value="34186">Nutrição - N</option>
+                    <option value="4265">Odontologia - M</option>
+                    <option value="4266">Odontologia - N</option>
+                    <option value="">Pedagogia - N</option>
+                    <option value="">Psicologia - M</option>
+                    <option value="">Psicologia - N</option>
+                    <option value="67412">Sistemas de Informação - N</option>
+                </select>
+                <select id="periodFilter" class="filter-select">
+                    <option value="">Todos os Períodos</option>
+                    <option value="1">1º Período</option>
+                    <option value="2">2º Período</option>
+                    <option value="3">3º Período</option>
+                    <option value="4">4º Período</option>
+                    <option value="5">5º Período</option>
+                    <option value="6">6º Período</option>
+                    <option value="7">7º Período</option>
+                    <option value="8">8º Período</option>
+                    <option value="9">9º Período</option>
+                    <option value="10">10º Período</option>
+                </select>
+                <select id="dayFilter" class="filter-select">
+                    <option value="">Todos os Dias</option>
+                    <option value="Seg">Segunda-feira</option>
+                    <option value="Ter">Terça-feira</option>
+                    <option value="Qua">Quarta-feira</option>
+                    <option value="Qui">Quinta-feira</option>
+                    <option value="Sex">Sexta-feira</option>
+                    <option value="Sab">Sábado</option>
+                    <option value="Dom">Domingo</option>
+                </select>
+                <select id="turnoFilter" class="filter-select">
+                    <option value="">Todos os Turnos</option>
+                    <option value="M">Manhã</option>
+                    <option value="T">Tarde</option>
+                    <option value="N">Noite</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="class-schedule">
+            <div id="classCardsContainer" class="cards-grid">
+                </div>
+            <p id="noResultsMessage" class="no-results" style="display: none;">Nenhum horário encontrado com os filtros aplicados.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> secretaria@nomedafaculdade.edu.br</p>
+                <p><i class="fas fa-phone"></i> (34) 3292-1900</p>
+            </div>
+            <div class="useful-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Site Oficial da Faculdade</a></li>
+                    <li><a href="#">Portal do Aluno</a></li>
+                    <li><a href="#">Regulamento Acadêmico</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Centro Universitário Flow. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="horarioaulaold.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+/* Variáveis CSS para facilitar a manutenção */
+:root {
+    --primary-color: rgb(12, 52, 61); /* Cor principal da faculdade (tom de laranja/marrom do logo) */
+    --secondary-color: rgb(255, 153, 0); /* Cor secundária (preto do logo) */
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --light-text-color: #666;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --header-height: 60px;
+    --menu-width: 280px; /* Largura do menu lateral */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Garante que não haja rolagem horizontal indesejada */
+}
+
+/* Para desabilitar o scroll do body quando o menu lateral estiver aberto ou modal */
+body.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 90%; /* Ajuste para mobile */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 10px;
+    border-radius: 50%; /* Se quiser a logo redonda */
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    white-space: nowrap; /* Evita quebra de linha em nomes curtos */
+    color: #fff; /* Garante que o texto do logo seja branco */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    display: block; /* Garante que o botão hamburger apareça */
+    line-height: 1; /* Alinha o ícone verticalmente */
+}
+
+/* Side Menu (Off-canvas) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0; /* Posiciona o menu no canto direito (para transform) */
+    width: var(--menu-width);
+    height: 100%; /* Garante que o menu ocupe toda a altura da viewport */
+    background-color: var(--card-background);
+    box-shadow: -3px 0 10px var(--shadow-light);
+    z-index: 1001; /* Z-index do menu deve ser maior que o overlay */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    /* Propriedades de transformação para esconder/mostrar */
+    transform: translateX(100%); /* Esconde o menu 100% da sua largura para a direita */
+    transition: transform 0.3s ease-in-out; /* Garante a transição suave */
+
+    overflow-y: auto; /* Adiciona rolagem vertical quando o conteúdo excede a altura */
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos iOS */
+}
+
+.side-menu.open {
+    transform: translateX(0); /* Traz o menu de volta para a posição original (visível) */
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    align-self: flex-end; /* Alinha o botão de fechar à direita */
+    margin-bottom: 20px;
+    line-height: 1; /* Alinha o ícone verticalmente */
+}
+
+.side-menu ul {
+    list-style: none;
+    width: 100%;
+}
+
+.side-menu ul li {
+    margin-bottom: 10px;
+}
+
+.side-menu ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.side-menu ul li a i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.side-menu ul li a:hover,
+.side-menu ul li a:focus {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.side-menu ul li.separator {
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* Estilos para o Submenu */
+.has-submenu .submenu-toggle {
+    display: flex;
+    justify-content: space-between; /* Espaço entre texto e ícone de seta */
+    align-items: center;
+    cursor: pointer;
+}
+
+.submenu-icon {
+    transition: transform 0.3s ease; /* Transição para rotação da seta */
+}
+
+.has-submenu.open .submenu-icon {
+    transform: rotate(180deg); /* Gira a seta quando o submenu está aberto */
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 25px; /* Recuo para os itens do submenu */
+    max-height: 0; /* Oculta o submenu por padrão */
+    overflow: hidden; /* Garante que o conteúdo oculto não seja visível */
+    transition: max-height 0.3s ease-out; /* Transição para o efeito de abrir/fechar */
+    background-color: #f9f9f9; /* Fundo levemente diferente para o submenu */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.has-submenu.open .submenu {
+    max-height: max-content; /* 300px; /* Um valor alto o suficiente para mostrar todo o conteúdo do submenu */
+    /* Você pode calcular um valor exato ou usar max-content se o suporte for bom */
+}
+
+.submenu li a {
+    padding: 10px 15px; /* Ajuste o padding para itens de submenu */
+    font-size: 1rem;
+}
+
+.submenu li a i {
+    font-size: 1.1rem;
+}
+
+/* Overlay para quando o menu estiver aberto */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Deve ser menor que o z-index do menu */
+    visibility: hidden; /* Oculta o overlay sem tirar do fluxo do layout */
+    opacity: 0; /* Começa transparente */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição para suavidade */
+}
+
+.overlay.active {
+    visibility: visible; /* Torna visível */
+    opacity: 1; /* Torna opaco */
+}
+
+/* Main Content */
+.main-content {
+    padding-top: var(--header-height); /* Para evitar que o conteúdo fique atrás do header fixo */
+}
+
+/* Hero Section (Banner) */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Feed Section (Posts) */
+.feed-section {
+    padding-bottom: 40px;
+}
+
+.feed-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Estilos da Barra de Pesquisa */
+.search-bar-container {
+    position: relative;
+    margin: 20px auto 30px auto; /* Centraliza e adiciona margem */
+    max-width: 500px; /* Largura máxima para desktop */
+    width: 90%; /* Largura responsiva */
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Padding para o texto e espaço para o ícone */
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* Cantos bem arredondados */
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(var(--primary-color-rgb-values), 0.2); /* Exemplo de sombra colorida */
+    outline: none; /* Remove o contorno padrão do focus */
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text-color);
+    font-size: 1.2rem;
+}
+
+
+.post-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna para mobile */
+    gap: 25px;
+}
+
+.post-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.post-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.post-content p {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: var(--light-text-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-meta i {
+    margin-right: 5px;
+    color: var(--secondary-color);
+}
+
+/* Estilo para transformar o link "read-more" em um botão */
+.read-more {
+    display: inline-flex; /* Permite alinhar ícone e texto */
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo do botão */
+    background-color: var(--secondary-color); /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remove sublinhado do link */
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 8px 15px; /* Preenchimento interno do botão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transições para hover/active */
+    border: none; /* Remove borda padrão de botão */
+    cursor: pointer; /* Indica que é clicável */
+    margin-top: 10px; /* Espaçamento acima do botão */
+}
+
+.read-more:hover {
+    background-color: var(--primary-color); /* Cor de fundo no hover */
+    transform: translateY(-2px); /* Efeito de "levantar" no hover */
+}
+
+.read-more:active {
+    transform: translateY(0); /* Efeito de "pressionar" no clique */
+}
+
+.read-more i {
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #fff; /* Garante que o ícone também seja branco */
+}
+
+/* Botão Carregar Mais */
+.load-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.load-more-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.load-more-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.load-more-button:active {
+    transform: translateY(0);
+}
+
+/* Estilos do Modal (Pop-up) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixo na tela */
+    z-index: 2000; /* Z-index alto para ficar acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite rolagem se o conteúdo for muito grande */
+    background-color: rgba(0,0,0,0.7); /* Fundo escuro semi-transparente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Espaçamento das bordas */
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Largura em mobile */
+    max-width: 600px; /* Largura máxima em desktop */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative; /* Para posicionar o botão de fechar */
+    animation-name: animatemodal;
+    animation-duration: 0.4s;
+    display: flex; /* Para organizar o conteúdo */
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos do modal */
+}
+
+@keyframes animatemodal {
+    from {transform: scale(0.7); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.modal-content p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-content .post-meta {
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+    margin-top: 10px;
+}
+
+.close-modal-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal-button:hover,
+.close-modal-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+
+/* Media Queries para Tablets e Desktops (otimização progressiva) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .logo h1 {
+        font-size: 1.8rem;
+    }
+
+    .post-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .post-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // renderCoordinatorsCards(); // <-- ESTA LINHA SERÁ REMOVIDA
             
             // Exibe a mensagem inicial para o usuário selecionar um curso
-            noCoordinatorsMessage.textContent = 'Por favor, selecione um curso para visualizar os coordenadores.';
+            noCoordinatorsMessage.textContent = 'Por favor, selecione um curso para visualizar o(a) coordenador(a).';
             noCoordinatorsMessage.style.display = 'block';
 
         } catch (error) {

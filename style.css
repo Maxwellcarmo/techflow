@@ -671,11 +671,40 @@ body {
 
 /* Cards de Aulas (Mais Compactos) */
 .cards-grid {
-  display: grid;
-  /* Ajuste o minmax para ter mais cards por linha ou um tamanho menor */
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Min-width um pouco menor */
-  gap: 15px; /* Reduzir o espaçamento entre os cards */
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    /* REMOVA OU COMENTE A LINHA ABAIXO */
+    /* padding: 20px 0; */
+    justify-content: center;
+}
+
+/* Garantir espaçamento consistente em telas pequenas */
+@media (max-width: 768px) { /* ou 600px, dependendo do seu breakpoint */
+    .container,
+    .hero-section,
+    .filter-section,
+    .class-schedule {
+        padding-left: 20px; /* Ou 15px, se preferir um espaçamento menor */
+        padding-right: 20px;
+    }
+
+    /* Se os cards ainda estiverem colados, adicione/ajuste isto */
+    .cards-grid {
+        /* Permite que o grid use o padding do pai */
+        margin-left: 0;
+        margin-right: 0;
+        width: auto; /* Garante que não force 100% da largura do viewport */
+    }
+
+    /* Se os filtros ainda estiverem colados, adicione/ajuste isto */
+    .filter-group {
+         /* Permite que o grupo de filtro use o padding do pai */
+         margin-left: 0;
+         margin-right: 0;
+         width: auto; /* Garante que não force 100% da largura do viewport */
+         min-width: unset; /* Permite que o flex item encolha mais se necessário */
+    }
 }
 
 .class-card {

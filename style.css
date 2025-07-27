@@ -17,6 +17,12 @@ body {
   margin: 0 auto;
 }
 
+.main-content-horarios {
+  padding: 20px;
+  max-width: 600px; /* Ou a largura que você desejar para comportar 4 colunas */
+  margin: 0 auto;
+}
+
 .header {
   background-color: #0056b3;
   color: white;
@@ -606,34 +612,40 @@ body {
 }
 
 /* Estilo para o contêiner dos filtros (selects) */
+/* Estilo para o contêiner dos filtros (selects) */
 .filters {
-  display: flex;
-  flex-wrap: wrap; /* Permite que os selects quebrem a linha em telas menores */
+  display: grid; /* Mude para grid */
+  /* Crie 4 colunas de largura igual. O 'minmax' garante que elas não fiquem muito pequenas */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Ajustado para 4 colunas */
   gap: 15px; /* Espaçamento entre os selects */
   justify-content: center; /* Centraliza os filtros */
   margin-top: 20px;
   margin-bottom: 30px;
+  max-width: 960px; /* Adicione um max-width para o contêiner principal dos filtros para controlá-los melhor */
+  margin-left: auto; /* Centraliza o contêiner de filtros */
+  margin-right: auto;
 }
 
-/* Estilo para os campos de filtro (select) */
+/* Mantenha o estilo para .filter-select como está, ou ajuste se necessário */
 .filter-select {
-  flex: 1; /* Permite que os selects se expandam */
-  min-width: 180px; /* Largura mínima para evitar que fiquem muito pequenos */
+  /* Remova o flex: 1 se você adicionou em alguma outra parte, pois agora o grid gerencia o tamanho */
+  /* flex: 1; */
+  /* min-width: 180px;  Pode ser necessário reduzir este valor ou deixar o grid gerenciar totalmente */
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Padrão de borda arredondada */
+  border-radius: 8px;
   font-size: 1rem;
-  background-color: #fff; /* Fundo branco para os selects */
+  background-color: #fff;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  -webkit-appearance: none; /* Remove o estilo padrão do select em navegadores WebKit */
-  -moz-appearance: none; /* Remove o estilo padrão do select em navegadores Gecko */
-  appearance: none; /* Remove o estilo padrão do select */
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%230056b3%22%20d%3D%22M287%20197.3l-13.9-13.9c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L146.2%20272.9%2035.5%20162.2c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L13.4%20176.1c-1%201-1.4%202.6-1.4%204.1s.4%203.1%201.4%204.1l128.7%20128.7c1%201%202.6%201.4%204.1%201.4s3.1-.4%204.1-1.4l128.7-128.7c1-1%201.4-2.6%201.4-4.1s-.4-3.1-1.4-4.1z%22%2F%3E%3C\/svg%3E'); /* Ícone de seta para baixo */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%230056b3%22%20d%3D%22M287%20197.3l-13.9-13.9c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L146.2%20272.9%2035.5%20162.2c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L13.4%20176.1c-1%201-1.4%202.6-1.4%204.1s.4%203.1%201.4%204.1l128.7%20128.7c1%201%202.6%201.4%204.1%201.4s3.1-.4%204.1-1.4l128.7-128.7c1-1%201.4-2.6%201.4-4.1s-.4-3.1-1.4-4.1z%22%2F%3E%3C\/svg%3E');
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 12px;
-  padding-right: 30px; /* Espaço para a seta */
+  padding-right: 30px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -641,6 +653,20 @@ body {
   border-color: #0056b3;
   box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
   outline: none;
+}
+
+/* Ajuste a media query para telas menores, se necessário */
+@media (max-width: 900px) { /* Exemplo: acima de 900px mostra 4, abaixo mostra menos */
+  .filters {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* 3 ou 2 colunas */
+  }
+}
+
+@media (max-width: 600px) {
+  .filters {
+    grid-template-columns: 1fr; /* Volta para 1 coluna em telas muito pequenas */
+    gap: 10px;
+  }
 }
 
 /* Cards de Aulas (Mais Compactos) */

@@ -571,3 +571,144 @@ body {
   text-align: center;
   font-size: 0.95rem;
 }
+
+/* Estilo para o contêiner de pesquisa no horarioaulas.html */
+.search-container {
+  position: relative;
+  max-width: 400px; /* Alinha com o max-width de .input-busca ou .busca-vagas */
+  margin: 20px auto; /* Centraliza e adiciona margem */
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Estilo para o campo de pesquisa (input) */
+#searchInput {
+  width: 100%;
+  padding: 12px 12px 12px 36px; /* Aumenta o padding esquerdo para o ícone */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Padrão de borda arredondada */
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #0056b3; /* Cor da borda ao focar, similar aos botões */
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* Efeito de foco suave */
+  outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo para o contêiner dos filtros (selects) */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os selects quebrem a linha em telas menores */
+  gap: 15px; /* Espaçamento entre os selects */
+  justify-content: center; /* Centraliza os filtros */
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Estilo para os campos de filtro (select) */
+.filter-select {
+  flex: 1; /* Permite que os selects se expandam */
+  min-width: 180px; /* Largura mínima para evitar que fiquem muito pequenos */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Padrão de borda arredondada */
+  font-size: 1rem;
+  background-color: #fff; /* Fundo branco para os selects */
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  -webkit-appearance: none; /* Remove o estilo padrão do select em navegadores WebKit */
+  -moz-appearance: none; /* Remove o estilo padrão do select em navegadores Gecko */
+  appearance: none; /* Remove o estilo padrão do select */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%230056b3%22%20d%3D%22M287%20197.3l-13.9-13.9c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L146.2%20272.9%2035.5%20162.2c-1-1-2.6-1.4-4.1-1.4s-3.1.4-4.1%201.4L13.4%20176.1c-1%201-1.4%202.6-1.4%204.1s.4%203.1%201.4%204.1l128.7%20128.7c1%201%202.6%201.4%204.1%201.4s3.1-.4%204.1-1.4l128.7-128.7c1-1%201.4-2.6%201.4-4.1s-.4-3.1-1.4-4.1z%22%2F%3E%3C\/svg%3E'); /* Ícone de seta para baixo */
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 30px; /* Espaço para a seta */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+  outline: none;
+}
+
+/* Cards de Aulas (Mais Compactos) */
+.cards-grid {
+  display: grid;
+  /* Ajuste o minmax para ter mais cards por linha ou um tamanho menor */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Min-width um pouco menor */
+  gap: 15px; /* Reduzir o espaçamento entre os cards */
+  margin-top: 20px;
+}
+
+.class-card {
+  background-color: #fff;
+  padding: 15px; /* Reduzir o padding interno */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Reduzir o espaçamento entre os elementos dentro do card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-3px); /* Movimento de hover mais sutil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12); /* Sombra um pouco menor no hover */
+}
+
+.class-card h3 {
+  font-size: 1.1rem; /* Fonte do título um pouco menor */
+  color: #0056b3;
+  margin-bottom: 3px; /* Reduzir margem inferior */
+}
+
+.class-card p {
+  font-size: 0.88rem; /* Fonte dos parágrafos um pouco menor */
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduzir espaçamento entre ícone e texto */
+  line-height: 1.3; /* Ajustar a altura da linha se necessário */
+}
+
+.class-card p i {
+  color: #0056b3;
+  font-size: 0.9rem; /* Ícone um pouco menor */
+}
+
+/* Mensagem de "nenhum resultado" */
+.no-results {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Responsividade para filtros em telas menores */
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column; /* Empilha os selects verticalmente */
+    gap: 10px;
+  }
+
+  .filter-select {
+    min-width: unset; /* Remove largura mínima para se ajustar ao pai */
+    width: 100%;
+  }
+
+  .search-container {
+    padding: 0 10px; /* Adiciona padding nas laterais em telas pequenas */
+  }
+}

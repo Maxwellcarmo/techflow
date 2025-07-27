@@ -738,3 +738,121 @@ body {
     padding: 0 10px; /* Adiciona padding nas laterais em telas pequenas */
   }
 }
+
+/* --- Estilos para a Tela de Coordenadores --- */
+
+/* Grid para os cards dos coordenadores */
+.coordinators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas flexíveis */
+    gap: 25px; /* Espaçamento entre os cards */
+    padding: 20px 0; /* Padding vertical, horizontal já vem do .container */
+    justify-content: center; /* Centraliza os cards no grid */
+    align-items: start; /* Alinha os cards ao topo */
+}
+
+/* Estilo individual do card do coordenador */
+.coordinator-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Organiza conteúdo verticalmente */
+    align-items: center; /* Centraliza itens horizontalmente no card */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 280px; /* Garante uma altura mínima para consistência */
+}
+
+.coordinator-card .contact-details p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo (ícone + texto) ao início da linha (esquerda) */
+    gap: 8px;
+    line-height: 1.4;
+    text-align: left; /* Garante que o texto dentro do parágrafo seja alinhado à esquerda */
+}
+
+.coordinator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.coordinator-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    margin-bottom: 15px;
+    border: 3px solid #0056b3; /* Borda ao redor da foto */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coordinator-info h3 {
+    font-size: 1.4rem;
+    color: #0056b3;
+    margin-bottom: 5px;
+}
+
+.coordinator-role {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.contact-details p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto de contato */
+    gap: 8px; /* Espaçamento entre ícone e texto */
+    line-height: 1.4;
+}
+
+.contact-details p i {
+    color: #0056b3; /* Cor dos ícones */
+    font-size: 1rem;
+}
+
+.contact-details a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .coordinators-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        gap: 20px;
+    }
+
+    .coordinator-card {
+        padding: 15px;
+    }
+
+    .coordinator-photo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .coordinator-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .coordinator-role, .contact-details p {
+        font-size: 0.85rem;
+    }
+}

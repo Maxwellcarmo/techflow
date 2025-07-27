@@ -150,5 +150,4 @@ document.querySelectorAll(".mes-btn").forEach(btn => {
 // Inicializa com o mês atual ou fevereiro
 const { ano } = obterSemestreAtual();
 const mesAtual = new Date().getMonth() + 1;
-const mesPadrao = mesAtual < 2 || mesAtual > 6 ? 2 : mesAtual;
-document.querySelector(`.mes-btn[data-mes='${mesPadrao}']`)?.click();
+document.querySelector(`.mes-btn[data-mes='${mesAtual}']`)?.click();

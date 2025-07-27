@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordenadores - Universidade TechFlow</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" href="../logo.jpg" type="image/png" />
+</head>
+<body>
+    <header class="header">
+        <div class="container logo">
+            <img src="../images/logo.jpg" alt="Logo" class="logo-img" />
+            <div class="logo-text">
+                <h1>Universidade TechFlow</h1>
+                <p class="subtitle">Transformando vidas pelo conhecimento</p>
+                <p class="address">Av. Central, 123 - Uberlândia/MG</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="topo-pagina">
+            <button class="btn-voltar" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+        </div>
+
+        <h2 class="section-title">Nossos Coordenadores</h2>
+
+        <section class="filter-section">
+            <div class="filter-group">
+                <select id="courseFilter" class="filter-select">
+                    <option value="">Selecione um Curso</option>
+                    </select>
+            </div>
+        </section>
+
+        <section class="coordinators-section">
+            <div id="coordinatorsContainer" class="coordinators-grid">
+                </div>
+            <p id="noCoordinatorsMessage" class="no-results" style="display: none;">Nenhum coordenador encontrado para o curso selecionado.</p>
+        </section>
+    </main>
+
+    <script src="coordenadores.js"></script>
+</body>
+</html>

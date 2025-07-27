@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const testeTurma = turmaContemCursoEPeriodo(aula.curso, selectedCourse, selectedPeriod);
 
             // Retorna true se todos os filtros forem satisfeitos
-            return matchesSearch && matchesCourse && matchesPeriod && matchesDay && matchesTurno;
+            return matchesSearch && testeTurma && matchesDay && matchesTurno;
         });
 
         const testePeriodo = calcularAnoSemestreIngresso(selectedPeriod);
@@ -152,10 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function turmaContemCursoEPeriodo(turmasString, cursoIdAlvo, periodoAlvo) {
-        const turmas = turmasString.split(',').map(t => t.trim());
+        const turmas = turmasString.split('-').map(t => t.trim());
 
         for (let turma of turmas) {
-            const match = turma.match(/^(\d{5})(\d{4})(\d)([A-Z]?)$/);
+            const match = turma.match(/^(\d{4,5})(\d{4})(\d)([A-Z])$/);
             if (!match) continue;
 
             const [_, idCurso, ano, semestre] = match;
@@ -168,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const diferencaSemestres = (anosDiferenca * 2) + (semestreAtual - parseInt(semestre));
             const periodoAtual = diferencaSemestres + 1;
 
-            if (idCurso === cursoIdAlvo && periodoAtual === parseInt(periodoAlvo)) {
+            if (periodoAtual > 10) {
+                return false;
+            } else if ((idCurso === cursoIdAlvo || cursoIdAlvo == '') && (periodoAtual === parseInt(periodoAlvo) || periodoAlvo == '')) {
                 return true;
             }
         }

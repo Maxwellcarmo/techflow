@@ -6,31 +6,40 @@ function obterSemestreAtual() {
 }
 
 const eventos = {
-  2: [
-    { diaInicio: 1, diaFim: 1, titulo: "Início do Período Letivo", tipo: "aula" },
-    { diaInicio: 3, diaFim: 5, titulo: "Carnaval", tipo: "feriado" },
-    { diaInicio: 7, diaFim: 7, titulo: "Avaliação Oficial - 1º Bimestre", tipo: "prova" },
-    { diaInicio: 10, diaFim: 10, titulo: "Início das Aulas", tipo: "aula" },
-    { diaInicio: 18, diaFim: 18, titulo: "Paixão de Cristo", tipo: "feriado" }
+  7: [
+    { diaInicio: 30, diaFim: 30, titulo: "Semana Acadêmica Coordenadores", tipo: "evento" },
+    { diaInicio: 31, diaFim: 31, titulo: "Semana Acadêmica Professores", tipo: "evento" }
   ],
-  3: [
-    { diaInicio: 3, diaFim: 7, titulo: "Semana Acadêmica", tipo: "evento" },
-    { diaInicio: 17, diaFim: 17, titulo: "Data Limite de Notas - 1º Bimestre", tipo: "aula" }
+  8: [
+    { diaInicio: 1, diaFim: 1, titulo: "Semana Acadêmica Professores", tipo: "evento" },
+    { diaInicio: 1, diaFim: 1, titulo: "Inicio do Período Letívo", tipo: "evento" },
+    { diaInicio: 4, diaFim: 4, titulo: "Inicio das Aulas", tipo: "aula" }
   ],
-  4: [
-    { diaInicio: 21, diaFim: 21, titulo: "Feriado - Tiradentes", tipo: "feriado" }
+  9: [
+    { diaInicio: 7, diaFim: 7, titulo: "Feriado - Independência do Brasil", tipo: "feriado" },
+    { diaInicio: 22, diaFim: 26, titulo: "Avaliação Oficial - 1º Bimestre", tipo: "prova" }
   ],
-  5: [
-    { diaInicio: 1, diaFim: 1, titulo: "Feriado - Dia do Trabalho", tipo: "feriado" },
-    { diaInicio: 2, diaFim: 6, titulo: "Avaliação Oficial - 2º Bimestre", tipo: "prova" },
-    { diaInicio: 13, diaFim: 13, titulo: "Data Limite de Notas - 2º Bimestre", tipo: "aula" },
-    { diaInicio: 19, diaFim: 19, titulo: "Corpus Christi", tipo: "feriado" },
-    { diaInicio: 21, diaFim: 21, titulo: "Término das Aulas", tipo: "aula" }
+  10: [
+    { diaInicio: 3, diaFim: 3, titulo: "Realizar revisão de notas - 1º bimestre", tipo: "evento" },
+    { diaInicio: 12, diaFim: 12, titulo: "Feriado - Nossa Sr.a Aparecida", tipo: "feriado" },
+    { diaInicio: 13, diaFim: 13, titulo: "Recesso Escolar - Não haverá aula", tipo: "feriado" }
   ],
-  6: [
-    { diaInicio: 23, diaFim: 25, titulo: "Exame Final", tipo: "exame" },
-    { diaInicio: 26, diaFim: 26, titulo: "Lançamento de Notas do Exame Final", tipo: "exame" },
-    { diaInicio: 30, diaFim: 30, titulo: "Encerramento do Período Letivo", tipo: "aula" }
+  11: [
+    { diaInicio: 2, diaFim: 2, titulo: "Feriado - Finados", tipo: "feriado" },
+    { diaInicio: 15, diaFim: 15, titulo: "Feriado - Proclamação da República", tipo: "feriado" },
+    { diaInicio: 17, diaFim: 21, titulo: "Avaliação Oficial - 2º Bimestre", tipo: "prova" },
+    { diaInicio: 17, diaFim: 29, titulo: "Avaliação Oficial DI - Disciplina Interativa", tipo: "prova" },
+    { diaInicio: 20, diaFim: 20, titulo: "Feriado - Dia Nacional de Zumbi e da Consciência Negra", tipo: "feriado" },
+     { diaInicio: 24, diaFim: 28, titulo: "Apresentação das Bancas de TCC", tipo: "evento" }
+  ], 
+  12: [
+    { diaInicio: 1, diaFim: 3, titulo: "Avaliaçãode 2ª Chamada", tipo: "exame" },
+    { diaInicio: 6, diaFim: 6, titulo: "Término das Aulas", tipo: "aula" },
+    { diaInicio: 1, diaFim: 5, titulo: "Lançamento de Notas Oficial DI", tipo: "evento" },
+    { diaInicio: 4, diaFim: 5, titulo: "Lançamento de Notas das Avaliações 2ª Chamada e Realizar revisão de Notas tardio", tipo: "evento" },
+    { diaInicio: 8, diaFim: 10, titulo: "Exame Final", tipo: "exame" },
+    { diaInicio: 11, diaFim: 12, titulo: "Lançamento das notas do Exame Final", tipo: "evento" },
+    { diaInicio: 31, diaFim: 31, titulo: "Encerramento do Período Letivo", tipo: "aula" }
   ]
 };
 

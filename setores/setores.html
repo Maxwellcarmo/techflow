@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horário dos Setores - Universidade TechFlow</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" href="../logo.jpg" type="image/png" />
+</head>
+<body>
+    <header class="header">
+        <div class="container logo">
+            <img src="../images/logo.jpg" alt="Logo" class="logo-img" />
+            <div class="logo-text">
+                <h1>Universidade TechFlow</h1>
+                <p class="subtitle">Transformando vidas pelo conhecimento</p>
+                <p class="address">Av. Central, 123 - Uberlândia/MG</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="topo-pagina">
+            <button class="btn-voltar" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+        </div>
+
+        <h2 class="section-title">Horário de Atendimento dos Setores</h2>
+
+        <section class="filter-section">
+            <div class="filter-group">
+                <label for="areaFilter">Filtrar por Área:</label>
+                <select id="areaFilter" class="filter-select">
+                    <option value="" selected disabled>Selecione uma Área</option>
+                    <option value="">Todas as Áreas</option>
+                    </select>
+            </div>
+        </section>
+
+        <section class="sectors-section">
+            <div id="sectorCardsContainer" class="sectors-grid">
+                </div>
+            <p id="noResultsMessage" class="no-results" style="display: none;">Nenhum setor encontrado com os filtros aplicados.</p>
+        </section>
+    </main>
+
+    <script src="setores.js"></script>
+</body>
+</html>

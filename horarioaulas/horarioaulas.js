@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exemplo: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR.../pub?gid=0&single=true&output=csv'
     const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRVfK7EhDgf6oifgGZ0atK29GTBFj_gliRfQwKwzdu2yEvZwkb-sTB_cE3uNkbE6UtYqcFNeXkmDuXb/pub?gid=1418292739&single=true&output=csv'; 
 
+    const API_URL = 'https://flipper-46wf.onrender.com/api/horarios';
+    
     const classCardsContainer = document.getElementById('classCardsContainer');
     const searchInput = document.getElementById('searchInput');
     const courseFilter = document.getElementById('courseFilter');
@@ -30,6 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
             noResultsMessage.style.display = 'block';
         }
     }
+
+    async function loadScheduleFromAPI() {
+        try {
+            const response = await fetch('https://flipper-46wf.onrender.com/api/horarios');
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
+            }
+
+            const data = await response.json();
+            classScheduleData = data;
+            applyFilters(); // Já renderiza os dados usando filtros existentes
+        } catch (error) {
+            console.error("Erro ao carregar dados da API:", error);
+            noResultsMessage.textContent = "Erro ao carregar os horários. Verifique a API.";
+            noResultsMessage.style.display = 'block';
+        }
+    }
+
 
     // Função auxiliar para parsear (analisar) o texto CSV em um array de objetos
     function parseCSV(csv) {
@@ -187,5 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
     turnoFilter.addEventListener('change', applyFilters); // Quando o turno é alterado
 
     // Inicia o carregamento dos dados da planilha assim que a página é carregada
-    loadScheduleFromGoogleSheet();
+    //loadScheduleFromGoogleSheet();
+
+    //Ajustando a busca para a API backEnd
+    loadScheduleFromAPI();
+
 });

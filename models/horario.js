@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  return sequelize.define('Horario', {
+  return sequelize.define('TGAHOR', {
     disciplina: DataTypes.STRING,
     professor: DataTypes.STRING,
     sala: DataTypes.STRING,

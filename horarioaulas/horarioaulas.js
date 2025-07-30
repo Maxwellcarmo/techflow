@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exemplo: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR.../pub?gid=0&single=true&output=csv'
     const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRVfK7EhDgf6oifgGZ0atK29GTBFj_gliRfQwKwzdu2yEvZwkb-sTB_cE3uNkbE6UtYqcFNeXkmDuXb/pub?gid=1418292739&single=true&output=csv'; 
 
-    const API_URL = 'https://flipper-46wf.onrender.com/api/horarios';
+    const API_URL = 'https://flipper-46wf.onrender.com/api/horario';
     
     const classCardsContainer = document.getElementById('classCardsContainer');
     const searchInput = document.getElementById('searchInput');

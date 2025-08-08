@@ -1,10 +1,3 @@
-O problema com a expansão do menu ocorre devido ao valor fixo da propriedade `max-height` no CSS, que pode não ser suficiente para o conteúdo dinâmico ou mais longo, como o novo layout de cartões.
-
-A solução é aumentar esse valor para garantir que ele seja sempre maior do que o conteúdo, permitindo a expansão completa.
-
-Abaixo está o código HTML corrigido, onde o `max-height` para o estado `.dropdown-content.show` foi aumentado para 4000px.
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -57,7 +50,7 @@ Abaixo está o código HTML corrigido, onde o `max-height` para o estado `.dropd
       margin-bottom: 10px;
     }
     .dropdown-content.show {
-      max-height: 4000px; /* Valor aumentado para acomodar todo o conteúdo */
+      max-height: 5000px; /* Valor aumentado para acomodar todo o conteúdo */
       padding: 20px;
     }
     .dropdown-content ul, .dropdown-content p {

@@ -207,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
     turnoFilter.addEventListener('change', applyFilters); // Quando o turno é alterado
 
     // Inicia o carregamento dos dados da planilha assim que a página é carregada
-    //loadScheduleFromGoogleSheet();
+    loadScheduleFromGoogleSheet();
 
     //Ajustando a busca para a API backEnd
-    loadScheduleFromAPI();
+    //loadScheduleFromAPI();
 
 });

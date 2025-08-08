@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCC 1</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../../logo.jpg" type="image/png" />
+  <style>
+    /* Estilos para os botões e conteúdo do dropdown */
+    .dropdown-button {
+      width: 100%;
+      padding: 16px;
+      margin: 10px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .dropdown-button:hover {
+      background-color: #003f8a;
+    }
+
+    .dropdown-button i {
+      margin-right: 10px;
+    }
+
+    .dropdown-button .chevron {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown-button.active .chevron {
+        transform: rotate(90deg);
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #f9f9f9;
+      border-left: 5px solid #0056b3;
+      padding: 0 20px;
+      margin-bottom: 10px;
+    }
+
+    .dropdown-content.show {
+        max-height: 1000px; /* Um valor alto para acomodar o conteúdo */
+        padding: 20px;
+    }
+
+    .dropdown-content ul, .dropdown-content p {
+      margin-bottom: 15px;
+    }
+
+    .dropdown-content a.menu-button {
+      margin-top: 15px;
+    }
+
+    /* Estilos para o player do YouTube */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Proporção 16:9 */
+      height: 0;
+      margin-top: 20px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container logo">
+      <img src="../../images/logo.jpg" alt="Logo" class="logo-img" />
+      <div class="logo-text">
+        <h1 class="title">Flipper</h1>
+        <p class="subtitle">Conectando Conhecimento</p>
+        <p class="address">flipperacad.com.br</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <button class="btn-voltar" onclick="history.back()">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+
+      <h2 class="section-title">TCC 1</h2>
+      <p class="intro-text">Neste material você verá quais são os passos para a realização do TCC 1 pelo AVA.</p>
+
+      <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown(this, 'dados-tecnicos')">
+          <i class="fas fa-info-circle"></i> Dados Técnicos <span class="chevron">▶</span>
+        </button>
+        <div class="dropdown-content" id="dados-tecnicos">
+          <ul>
+            <li><strong>Nota para Aprovação:</strong> 6.000 pontos</li>
+            <li><strong>Tipo:</strong> Individual</li>
+            <li><strong>Envio dos Arquivos:</strong> Somente em formato WORD</li>
+            <li><strong>Possui apresentação:</strong> Não</li>
+            <li><strong>Contato com o tutor:</strong> Somente pelo AVA</li>
+            <li><strong>Possui Aula?:</strong> Não, as atividades são realizadas somente pelo AVA</li>
+            <li><strong>Tipo de Pesquisa:</strong> Revisão Bibliográfica (Não pode ser feito Estudo de Caso, nem Análise Experimental)</li>
+            <li><strong>Formato de Correção:</strong> Somente pelo AVA - No campo de Atividade (Em nenhuma hipótese as atividades serão corrigidas pelo campo mensagem, ou outro meio, as atividades serão corrigidas somente pelo envio da atividade no AVA, respeitando os prazos e formato de arquivo)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown(this, 'passo-1')">
+          <i class="fas fa-tasks"></i> 1º Passo - Leitura do Manual e Cronograma <span class="chevron">▶</span>
+        </button>
+        <div class="dropdown-content" id="passo-1">
+          <p>O passo mais importante nesta disciplina é realizar a leitura completa e atenta do Manual do TCC, que está disponível no seu AVA dentro desta disciplina. Neste manual você vai verificar a lista de Macrotemas, as formas de entrar em contato com o Tutor, as regras básicas do TCC, tempo para os retornos, etc.</p>
+          <p>Então, antes de iniciar o TCC, dedique um tempo para realizar a leitura completa deste manual.</p>
+          <p>Além disto, também estará disponível no AVA, junto do Manual, o Cronograma de Atividades, que te mostrará as datas de entrega de cada atividade. Importante!!! Não perca as datas de postagem, pois não haverá reabertura de prazos!</p>
+          <a href="https://drive.google.com/drive/u/1/folders/1Tz4f--JjNrHMlGRjT6MMf2yyCT9GiKic" class="menu-button" target="_blank">
+            <i class="fas fa-book-open"></i> Manual do TCC: Clique aqui
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title"><i class="fas fa-download"></i> Materiais e Vídeos</h3>
+        <a href="https://drive.google.com/drive/u/1/folders/1Tz4f--JjNrHMlGRjT6MMf2yyCT9GiKic" class="menu-button" target="_blank">
+          <i class="fas fa-file-pdf"></i> Download dos Materiais
+        </a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/IILBzta0Pko?start=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function toggleDropdown(button, id) {
+      const content = document.getElementById(id);
+      const isVisible = content.classList.contains("show");
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.dropdown-content').forEach(div => div.classList.remove("show"));
+      document.querySelectorAll('.dropdown-button').forEach(btn => btn.classList.remove("active"));
+      
+      // Toggle the clicked dropdown
+      if (!isVisible) {
+        content.classList.add("show");
+        button.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>

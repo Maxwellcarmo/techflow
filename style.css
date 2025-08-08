@@ -45,7 +45,7 @@ body {
 }
 
 .banner-img {
-  height: 120px; /* Mantém a altura desejada */
+  height: 90px; /* Mantém a altura desejada */
   max-width: 100%; /* Garante que a imagem nunca será maior que o seu contêiner */
   display: block;
   margin: 0 auto; /* Centraliza a imagem horizontalmente */

@@ -44,6 +44,13 @@ body {
   border-radius: 50%;
 }
 
+.banner-img {
+  height: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section-title {
   font-size: 1.5rem;
   margin-bottom: 20px;

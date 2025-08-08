@@ -1,3 +1,10 @@
+O problema com a expansão do menu ocorre devido ao valor fixo da propriedade `max-height` no CSS, que pode não ser suficiente para o conteúdo dinâmico ou mais longo, como o novo layout de cartões.
+
+A solução é aumentar esse valor para garantir que ele seja sempre maior do que o conteúdo, permitindo a expansão completa.
+
+Abaixo está o código HTML corrigido, onde o `max-height` para o estado `.dropdown-content.show` foi aumentado para 4000px.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,24 +34,19 @@
       transition: background-color 0.3s ease;
       position: relative;
     }
-
     .dropdown-button:hover {
       background-color: #003f8a;
     }
-
     .dropdown-button i {
       margin-right: 10px;
     }
-
     .dropdown-button .chevron {
-        margin-left: auto;
-        transition: transform 0.3s ease;
+      margin-left: auto;
+      transition: transform 0.3s ease;
     }
-    
     .dropdown-button.active .chevron {
-        transform: rotate(90deg);
+      transform: rotate(90deg);
     }
-
     .dropdown-content {
       max-height: 0;
       overflow: hidden;
@@ -54,20 +56,16 @@
       padding: 0 20px;
       margin-bottom: 10px;
     }
-
     .dropdown-content.show {
-        max-height: 1000px; /* Um valor alto para acomodar o conteúdo */
-        padding: 20px;
+      max-height: 4000px; /* Valor aumentado para acomodar todo o conteúdo */
+      padding: 20px;
     }
-
     .dropdown-content ul, .dropdown-content p {
       margin-bottom: 15px;
     }
-
     .dropdown-content a.menu-button {
       margin-top: 15px;
     }
-
     /* Estilos para o player do YouTube */
     .video-container {
       position: relative;
@@ -76,13 +74,50 @@
       height: 0;
       margin-top: 20px;
     }
-
     .video-container iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    
+    /* Estilos para o novo layout de cartões */
+    .macrotemas-container {
+      display: grid;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .curso-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .curso-card h4 {
+      font-size: 1.2rem;
+      color: #0056b3;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e0e8f0;
+      padding-bottom: 8px;
+    }
+    .curso-card ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .curso-card li {
+      margin-bottom: 5px;
+      font-size: 1rem;
+      color: #555;
+    }
+    .curso-card li::before {
+      content: "•";
+      color: #0056b3;
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
     }
   </style>
 </head>
@@ -133,22 +168,137 @@
           <p>O passo mais importante nesta disciplina é realizar a leitura completa e atenta do Manual do TCC, que está disponível no seu AVA dentro desta disciplina. Neste manual você vai verificar a lista de Macrotemas, as formas de entrar em contato com o Tutor, as regras básicas do TCC, tempo para os retornos, etc.</p>
           <p>Então, antes de iniciar o TCC, dedique um tempo para realizar a leitura completa deste manual.</p>
           <p>Além disto, também estará disponível no AVA, junto do Manual, o Cronograma de Atividades, que te mostrará as datas de entrega de cada atividade. Importante!!! Não perca as datas de postagem, pois não haverá reabertura de prazos!</p>
+          <h3 class="card-title"><i class="fas fa-download"></i> Materiais e Vídeos</h3>
           <a href="https://drive.google.com/drive/u/1/folders/1Tz4f--JjNrHMlGRjT6MMf2yyCT9GiKic" class="menu-button" target="_blank">
             <i class="fas fa-book-open"></i> Manual do TCC: Clique aqui
           </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3 class="card-title"><i class="fas fa-download"></i> Materiais e Vídeos</h3>
-        <a href="https://drive.google.com/drive/u/1/folders/1Tz4f--JjNrHMlGRjT6MMf2yyCT9GiKic" class="menu-button" target="_blank">
-          <i class="fas fa-file-pdf"></i> Download dos Materiais
-        </a>
+          <div class="card">
+          <a href="https://drive.google.com/drive/u/1/folders/1Tz4f--JjNrHMlGRjT6MMf2yyCT9GiKic" class="menu-button" target="_blank">
+            <i class="fas fa-file-pdf"></i> Download dos Materiais
+          </a>
         <div class="video-container">
           <iframe src="https://www.youtube.com/embed/IILBzta0Pko?start=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
+        </div>
+      </div>
 
+      <div class="dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown(this, 'passo-2')">
+          <i class="fas fa-tasks"></i> 2º Passo - Escolher o tema que deseja abordar <span class="chevron">▶</span>
+        </button>
+        <div class="dropdown-content" id="passo-2">
+          <p>De acordo com seu curso, alguns Macrotemas são liberados. Então, por este motivo, você precisará escolher dentro destes Macrotemas um assunto para abordar no seu Trabalho de Conclusão de Curso.</p>
+          <p>Lembre-se, seu tema escolhido não pode ser realizado em formato de pesquisa, todo o trabalho deve ser elaborado como Revisão Bibliográfica.</p>
+
+          <div class="macrotemas-container">
+            <div class="curso-card">
+              <h4>Administração</h4>
+              <ul>
+                <li>Planejamento Estratégico</li>
+                <li>Gestão de Pessoas</li>
+                <li>Fundamentos de Marketing</li>
+                <li>Gestão Corporativa e Empreendedorismo</li>
+                <li>Logística e Cadeias de Suprimentos</li>
+              </ul>
+            </div>
+            
+            <div class="curso-card">
+              <h4>Ciência da Computação</h4>
+              <ul>
+                <li>Banco de Dados</li>
+                <li>Arquitetura e Organização de Computadores</li>
+                <li>Redes</li>
+                <li>Engenharia de Software</li>
+                <li>Inteligência Artificial</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Ciências Contábeis</h4>
+              <ul>
+                <li>Contabilidade Gerencial</li>
+                <li>Elaboração das Demonstrações Financeiras</li>
+                <li>Auditoria Contábil</li>
+                <li>Contabilidade no Terceiro Setor</li>
+                <li>Análise das Demonstrações Contábeis</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia Ambiental</h4>
+              <ul>
+                <li>Avaliação de Impactos Ambientais</li>
+                <li>Gestão Ambiental</li>
+                <li>Tecnologia Ambiental</li>
+                <li>Saneamento Ambiental</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia Civil</h4>
+              <ul>
+                <li>Construção Civil</li>
+                <li>Hidráulica e Saneamento</li>
+                <li>Sistemas Estruturais e Geotecnia</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia da Computação</h4>
+              <ul>
+                <li>Metodologia e Técnica de Computação</li>
+                <li>Sistemas de Computação e Automação</li>
+                <li>Telecomunicações e Redes de Computador</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia de Produção</h4>
+              <ul>
+                <li>Gestão da Produção</li>
+                <li>Gestão de Qualidade</li>
+                <li>Segurança do Trabalho</li>
+                <li>Gerenciamento de Projetos</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia Elétrica</h4>
+              <ul>
+                <li>Sistemas de energia/Sistemas elétricos de potência</li>
+                <li>Eletrônica de potência/Automação</li>
+                <li>Telecomunicações</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Engenharia Mecânica</h4>
+              <ul>
+                <li>Calor e Fluidos</li>
+                <li>Mecânica Aplicada</li>
+                <li>Gestão da manutenção</li>
+                <li>Processos de fabricação</li>
+              </ul>
+            </div>
+
+            <div class="curso-card">
+              <h4>Sistemas de Informação</h4>
+              <ul>
+                <li>Banco de Dados</li>
+                <li>Engenharia de Software</li>
+                <li>Redes</li>
+              </ul>
+            </div>
+
+            <p>Sabemos que você vai ter dúvidas sobre quais temas escolher! Isso é normal! Nosso conselho aqui é que você escolha o tema que mais for confortável pra você, pois assim ficará mais fácil conduzir seus estudos e pesquisa durante o TCC. </p>
+            <p>Vamos deixar no final desta página algumas dicas de temas para te dar algumas ideias para seu trabalho. Mas lembre-se, são apenas algumas ideias, e devem ser verificadas antes com seu tutor. </p>
+
+          </div>
+        </div>
+      </div>
+
+      
     </div>
   </main>
 
@@ -157,11 +307,9 @@
       const content = document.getElementById(id);
       const isVisible = content.classList.contains("show");
       
-      // Close all other dropdowns
       document.querySelectorAll('.dropdown-content').forEach(div => div.classList.remove("show"));
       document.querySelectorAll('.dropdown-button').forEach(btn => btn.classList.remove("active"));
       
-      // Toggle the clicked dropdown
       if (!isVisible) {
         content.classList.add("show");
         button.classList.add("active");
@@ -170,3 +318,4 @@
   </script>
 </body>
 </html>
+```
